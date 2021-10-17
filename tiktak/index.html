@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tic Tac Game</title>
+</head>
+<style>
+	input
+	{
+		width: 88px;
+		height: 88px;
+		margin: 0px;
+		border: 2px solid gray;
+		text-align: center;
+		font-size: 100px;
+		
+	}
+	p
+	{
+		text-align: center;
+		color: red;
+		font-size: 20px;
+	}
+</style>
+<body>
+	<div id="tictak" style="height: 282px; width: 296px; margin: auto; border: 2px solid gray;">
+		
+		<input type="text" id="b1" onclick="myFun('1')" readonly >
+		<input type="text" id="b2" onclick="myFun('2')" readonly >
+		<input type="text" id="b3" onclick="myFun('3')" readonly >
+		<input type="text" id="b4" onclick="myFun('4')" readonly >
+		<input type="text" id="b5" onclick="myFun('5')" readonly >
+		<input type="text" id="b6" onclick="myFun('6')" readonly >
+		<input type="text" id="b7" onclick="myFun('7')" readonly >
+		<input type="text" id="b8" onclick="myFun('8')" readonly >
+		<input type="text" id="b9" onclick="myFun('9')" readonly >
+		<br>
+		<p id="print"></p>
+        <p id="player1"></p>
+        <p id="player2"></p>
+        <p id="chance"></p>
+        <br>
+        <br>
+        <br>
+        <p id="copyright"><b>Powered By:</b>Vivek Garg</p>
+	</div>
+<script type="text/javascript">
+	var i = 0;
+var b = document.getElementsByTagName('input');
+     document.getElementById('player1').innerHTML="Player 1: X";
+     document.getElementById('player2').innerHTML="Player 2 : 0";
+     document.getElementById('chance').innerHTML="Turn of X player";
+function myFun(num)
+{
+        document.getElementById('player1').innerHTML="";
+        document.getElementById('player2').innerHTML="";
+
+    i++;
+	if(i%2==0) 
+	{
+        document.body.style.backgroundColor = "cyan";
+        document.getElementById('chance').innerHTML="Turn of X player.";
+
+		if(num=='1')
+		{
+			b[0].value = "0";
+			b[0].disabled = true;
+		}
+		 else if(num=='2')
+		{
+			b[1].value = "0";
+			b[1].disabled = true;
+		}
+		else if(num=='3')
+		{
+			b[2].value = "0";
+			b[2].disabled = true;
+		}
+		else if(num=='4')
+		{
+			b[3].value = "0";
+			b[3].disabled = true;
+		}
+		else if(num=='5')
+		{
+			b[4].value = "0";
+			b[4].disabled = true;
+		}
+		else if(num=='6')
+		{
+			b[5].value = "0";
+			b[5].disabled = true;
+		}
+		else if(num=='7')
+		{
+			b[6].value = "0";
+			b[6].disabled = true;
+		}
+		else if(num=='8')
+		{
+			b[7].value = "0";
+			b[7].disabled = true;
+		}
+		else if(num=='9')
+		{
+			b[8].value = "0";
+			b[8].disabled = true;
+		}
+		
+	}
+	 else
+	 {
+        document.body.style.backgroundColor = "grey";
+        document.getElementById('chance').innerHTML="Turn of 0 player."
+
+	 	if(num=='1')
+		{
+			b[0].value = "X";
+			b[0].disabled = true;
+		}
+		 else if(num=='2')
+		{
+			b[1].value = "X";
+			b[1].disabled = true;
+		}
+		else if(num=='3')
+		{
+			b[2].value = "X";
+			b[2].disabled = true;
+		}
+		else if(num=='4')
+		{
+			b[3].value = "X";
+			b[3].disabled = true;
+		}
+		else if(num=='5')
+		{
+			b[4].value = "X";
+			b[4].disabled = true;
+		}
+		else if(num=='6')
+		{
+			b[5].value = "X";
+			b[5].disabled = true;
+		}
+		else if(num=='7')
+		{
+			b[6].value = "X";
+			b[6].disabled = true;
+		}
+		else if(num=='8')
+		{
+			b[7].value = "X";
+			b[7].disabled = true;
+		}
+		else if(num=='9')
+		{
+			b[8].value = "X";
+			b[8].disabled = true;
+		}
+
+	 }
+	 b1 = b[0].value;
+	 b2 = b[1].value;
+	 b3 = b[2].value;
+	 b4 = b[3].value;
+	 b5 = b[4].value;
+	 b6 = b[5].value;
+	 b7 = b[6].value;
+	 b8 = b[7].value;
+	 b9 = b[8].value;
+	 if ((b1 == 'X') && (b2 == 'X') && (b3 == 'X')) {
+        document.getElementById('print').innerHTML = "Player X won";
+        document.getElementById('chance').innerHTML=" ";
+        document.getElementById("b4").disabled = true;
+        document.getElementById("b5").disabled = true;
+        document.getElementById("b6").disabled = true;
+        document.getElementById("b7").disabled = true;
+        document.getElementById("b8").disabled = true;
+        document.getElementById("b9").disabled = true;
+        window.alert('Player X won');
+    }
+    else if ((b1 == 'X') && (b4 == 'X') && (b7 == 'X')) {
+        document.getElementById('print').innerHTML = "Player X won";
+        document.getElementById('chance').innerHTML=" ";
+        document.getElementById("b2").disabled = true;
+        document.getElementById("b3").disabled = true;
+        document.getElementById("b5").disabled = true;
+        document.getElementById("b6").disabled = true;
+        document.getElementById("b8").disabled = true;
+        document.getElementById("b9").disabled = true;
+ 
+        window.alert('Player X won');
+    }
+    else if ((b7 == 'x' || b7 == 'X') && (b8 == 'x' ||
+        b8 == 'X') && (b9 == 'x' || b9 == 'X')) {
+        document.getElementById('print')
+            .innerHTML = "Player X won";
+        document.getElementById('chance').innerHTML=" ";
+        document.getElementById("b1").disabled = true;
+        document.getElementById("b2").disabled = true;
+        document.getElementById("b3").disabled = true;
+        document.getElementById("b4").disabled = true;
+        document.getElementById("b5").disabled = true;
+        document.getElementById("b6").disabled = true;
+        window.alert('Player X won');
+    }
+    else if ((b3 == 'x' || b3 == 'X') && (b6 == 'x' ||
+        b6 == 'X') && (b9 == 'x' || b9 == 'X')) {
+        document.getElementById('print')
+            .innerHTML = "Player X won";
+        document.getElementById('chance').innerHTML=" ";
+        document.getElementById("b1").disabled = true;
+        document.getElementById("b2").disabled = true;
+        document.getElementById("b4").disabled = true;
+        document.getElementById("b5").disabled = true;
+        document.getElementById("b7").disabled = true;
+        document.getElementById("b8").disabled = true;
+        window.alert('Player X won');
+    }
+    else if ((b1 == 'x' || b1 == 'X') && (b5 == 'x' ||
+        b5 == 'X') && (b9 == 'x' || b9 == 'X')) {
+        document.getElementById('print')
+            .innerHTML = "Player X won";
+        document.getElementById('chance').innerHTML=" ";
+        document.getElementById("b2").disabled = true;
+        document.getElementById("b3").disabled = true;
+        document.getElementById("b4").disabled = true;
+        document.getElementById("b6").disabled = true;
+        document.getElementById("b7").disabled = true;
+        document.getElementById("b8").disabled = true;
+        window.alert('Player X won');
+    }
+    else if ((b3 == 'x' || b3 == 'X') && (b5 == 'x' ||
+        b5 == 'X') && (b7 == 'x' || b7 == 'X')) {
+        document.getElementById('print')
+            .innerHTML = "Player X won";
+        document.getElementById('chance').innerHTML=" ";
+        document.getElementById("b1").disabled = true;
+        document.getElementById("b2").disabled = true;
+        document.getElementById("b4").disabled = true;
+        document.getElementById("b6").disabled = true;
+        document.getElementById("b8").disabled = true;
+        document.getElementById("b9").disabled = true;
+        window.alert('Player X won');
+    }
+    else if ((b2 == 'x' || b2 == 'X') && (b5 == 'x' ||
+        b5 == 'X') && (b8 == 'x' || b8 == 'X')) {
+        document.getElementById('print')
+            .innerHTML = "Player X won";
+        document.getElementById('chance').innerHTML=" ";
+        document.getElementById("b1").disabled = true;
+        document.getElementById("b3").disabled = true;
+        document.getElementById("b4").disabled = true;
+        document.getElementById("b6").disabled = true;
+        document.getElementById("b7").disabled = true;
+        document.getElementById("b9").disabled = true;
+        window.alert('Player X won');
+    }
+    else if ((b4 == 'x' || b4 == 'X') && (b5 == 'x' ||
+        b5 == 'X') && (b6 == 'x' || b6 == 'X')) {
+        document.getElementById('print')
+            .innerHTML = "Player X won";
+        document.getElementById('chance').innerHTML=" ";
+        document.getElementById("b1").disabled = true;
+        document.getElementById("b2").disabled = true;
+        document.getElementById("b3").disabled = true;
+        document.getElementById("b7").disabled = true;
+        document.getElementById("b8").disabled = true;
+        document.getElementById("b9").disabled = true;
+        window.alert('Player X won');
+    }
+ 
+    // Checking of Player X finsh
+    // Checking for Player 0 starts, Is player 0 won or
+    // not and after that disabled all the other fields
+    else if ((b1 == '0' || b1 == '0') && (b2 == '0' ||
+        b2 == '0') && (b3 == '0' || b3 == '0')) {
+        document.getElementById('print')
+            .innerHTML = "Player 0 won";
+        document.getElementById('chance').innerHTML=" ";
+        document.getElementById("b4").disabled = true;
+        document.getElementById("b5").disabled = true;
+        document.getElementById("b6").disabled = true;
+        document.getElementById("b7").disabled = true;
+        document.getElementById("b8").disabled = true;
+        document.getElementById("b9").disabled = true;
+        window.alert('Player 0 won');
+    }
+    else if ((b1 == '0' || b1 == '0') && (b4 == '0' ||
+        b4 == '0') && (b7 == '0' || b7 == '0')) {
+        document.getElementById('print')
+            .innerHTML = "Player 0 won";
+        document.getElementById('chance').innerHTML=" ";
+        document.getElementById("b2").disabled = true;
+        document.getElementById("b3").disabled = true;
+        document.getElementById("b5").disabled = true;
+        document.getElementById("b6").disabled = true;
+        document.getElementById("b8").disabled = true;
+        document.getElementById("b9").disabled = true;
+        window.alert('Player 0 won');
+    }
+    else if ((b7 == '0' || b7 == '0') && (b8 == '0' ||
+        b8 == '0') && (b9 == '0' || b9 == '0')) {
+        document.getElementById('print')
+            .innerHTML = "Player 0 won";
+        document.getElementById('chance').innerHTML=" ";
+        document.getElementById("b1").disabled = true;
+        document.getElementById("b2").disabled = true;
+        document.getElementById("b3").disabled = true;
+        document.getElementById("b4").disabled = true;
+        document.getElementById("b5").disabled = true;
+        document.getElementById("b6").disabled = true;
+        window.alert('Player 0 won');
+    }
+    else if ((b3 == '0' || b3 == '0') && (b6 == '0' ||
+        b6 == '0') && (b9 == '0' || b9 == '0')) {
+        document.getElementById('print')
+            .innerHTML = "Player 0 won";
+        document.getElementById('chance').innerHTML=" ";
+        document.getElementById("b1").disabled = true;
+        document.getElementById("b2").disabled = true;
+        document.getElementById("b4").disabled = true;
+        document.getElementById("b5").disabled = true;
+        document.getElementById("b7").disabled = true;
+        document.getElementById("b8").disabled = true;
+        window.alert('Player 0 won');
+    }
+    else if ((b1 == '0' || b1 == '0') && (b5 == '0' ||
+        b5 == '0') && (b9 == '0' || b9 == '0')) {
+        document.getElementById('print')
+            .innerHTML = "Player 0 won";
+        document.getElementById('chance').innerHTML=" ";   
+        document.getElementById("b2").disabled = true;
+        document.getElementById("b3").disabled = true;
+        document.getElementById("b4").disabled = true;
+        document.getElementById("b6").disabled = true;
+        document.getElementById("b7").disabled = true;
+        document.getElementById("b8").disabled = true;
+        window.alert('Player 0 won');
+    }
+    else if ((b3 == '0' || b3 == '0') && (b5 == '0' ||
+        b5 == '0') && (b7 == '0' || b7 == '0')) {
+        document.getElementById('print')
+            .innerHTML = "Player 0 won";
+        document.getElementById('chance').innerHTML=" ";
+        document.getElementById("b1").disabled = true;
+        document.getElementById("b2").disabled = true;
+        document.getElementById("b4").disabled = true;
+        document.getElementById("b6").disabled = true;
+        document.getElementById("b8").disabled = true;
+        document.getElementById("b9").disabled = true;
+        window.alert('Player 0 won');
+    }
+    else if ((b2 == '0' || b2 == '0') && (b5 == '0' ||
+        b5 == '0') && (b8 == '0' || b8 == '0')) {
+        document.getElementById('print')
+            .innerHTML = "Player 0 won";
+        document.getElementById('chance').innerHTML=" ";   
+        document.getElementById("b1").disabled = true;
+        document.getElementById("b3").disabled = true;
+        document.getElementById("b4").disabled = true;
+        document.getElementById("b6").disabled = true;
+        document.getElementById("b7").disabled = true;
+        document.getElementById("b9").disabled = true;
+        window.alert('Player 0 won');
+    }
+    else if ((b4 == '0' || b4 == '0') && (b5 == '0' ||
+        b5 == '0') && (b6 == '0' || b6 == '0')) {
+        document.getElementById('print')
+            .innerHTML = "Player 0 won";
+        document.getElementById('chance').innerHTML=" ";
+        document.getElementById("b1").disabled = true;
+        document.getElementById("b2").disabled = true;
+        document.getElementById("b3").disabled = true;
+        document.getElementById("b7").disabled = true;
+        document.getElementById("b8").disabled = true;
+        document.getElementById("b9").disabled = true;
+        window.alert('Player 0 won');
+    }
+
+    else if ((b1 == 'X' || b1 == '0') && (b2 == 'X'
+        || b2 == '0') && (b3 == 'X' || b3 == '0') &&
+        (b4 == 'X' || b4 == '0') && (b5 == 'X' ||
+        b5 == '0') && (b6 == 'X' || b6 == '0') &&
+        (b7 == 'X' || b7 == '0') && (b8 == 'X' ||
+        b8 == '0') && (b9 == 'X' || b9 == '0')) 
+    {
+            document.getElementById('print').innerHTML = "Match Tie";
+            document.getElementById('chance').innerHTML=" ";
+            window.alert('Match Tie');
+    }
+	 
+	 
+
+
+	 
+
+
+	 }
+	 
+ 
+
+
+	
+</script>
+</body>
+</html>
