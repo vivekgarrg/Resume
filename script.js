@@ -107,7 +107,7 @@ function myfun(a)
     }
     else if(a=='bootstrap')
     {
-    window.location = 'bootstrap/index.html';
+    window.location = 'https://vivekgarrg.github.io/blueberrys/';
     }
     else if(a=='restra')
     {
